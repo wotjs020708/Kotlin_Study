@@ -70,3 +70,49 @@ shapes.remove("pentagon")
 println(shapes)  
 // [triangle, square, circle]
 ```
+-----
+# Set
+*정렬되어있지 않고 고유한 항목 만 저장합니다.*
+
+읽기 전용 세터(`Set`)를 생성하려면 `setOf()` 함수를 사용
+변경 가능한 세트(`MutableSet`)를 생성하려면 `mutableSetOf()` 함수 사용
+
+```kotlin
+// Read-only set
+val readOnlyFruit = setOf("apple", "banana", "cherry", "cherry")
+// Mutable set with explicit type declaration
+val fruit: MutableSet<String> = mutableSetOf("apple", "banana", "cherry", "cherry")
+
+println(readOnlyFruit)
+// [apple, banana, cherry]
+```
+이전 예에서 볼 수 있듯이 집합은 고유한 요소만 포함하므로 증복된`"cherry"`항목은 삭제된다.
+>원치 않는 수정을 방지하려면 다음을 지정하여 변경 가능한 세트의 읽기 전용 뷰를 만들 수 있다.
+>```kotlin
+>val fruit: MutableSet<String> = mutableSetOf("apple", "banana", "cherry", "cherry")
+>val fruitLocked: Set<String> = fruit
+>```
+
+>집합은 *순서가 없으므로* 특정 인덱스의 항목에 액세스할 수 없습니다.
+
+세트에 있는 항목의 개수를 구하려면 다음 `.count()`함수를 사용
+```kotlin
+val readOnlyFruit = setOf("apple", "banana", "cherry", "cherry")
+println("This set has ${readOnlyFruit.count()} items")
+// This set has 3 items
+```
+항목이 세트에 있는지 확인할면 다음 `in`연산자를 사용
+```kotlin
+val readOnlyFruit = setOf("apple", "banana", "cherry", "cherry")
+println("banana" in readOnlyFruit)
+// true
+```
+변경 가능한 세트에서 항목을 추가하거 제거하라면 각각 `.add()`, `.remove()` 함수 사용
+```kotlin
+val fruit: MutableSet<String> = mutableSetOf("apple", "banana", "cherry", "cherry")
+fruit.add("dragonfruit")    // Add "dragonfruit" to the set
+println(fruit)              // [apple, banana, cherry, dragonfruit]
+
+fruit.remove("dragonfruit") // Remove "dragonfruit" from the set
+println(fruit)              // [apple, banana, cherry]
+```
