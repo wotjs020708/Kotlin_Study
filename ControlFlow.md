@@ -142,6 +142,69 @@ Kotlin에서 범위를 만드는 가장 일반적인 방법은 `..`연산자를 
 `while` 특정 조건이 충족될때까지 작없을 수행합니다.
 
 
+### For
+범위에 대한 새로운 지식을 활용하여 `for` 1 부터 5까지 숫자를 반복하고 매번 숫자를 출력하는 루프를 만들수 있습니다.
 
+반복자와 범윌르 `in` 키워드로 `()`괄호 안에 넣습니다 완료하려는 작업을 `{}` 중괄호 안에 추가합니다.
+```kotlin
+for (number in 1..5) { 
+    // number is the iterator and 1..5 is the range
+    print(number)
+}
+// 12345
+```
 
+컬렉션은 루프를 통해 반복될 수 있습니다.
 
+```kotlin
+val cakes = listOf("carrot", "cheese", "chocolate")
+
+for (cake in cakes) {
+    println("Yummy, it's a $cake cake!")
+}
+// Yummy, it's a carrot cake!
+// Yummy, it's a cheese cake!
+// Yummy, it's a chocolate cake!
+```
+
+### While
+`while`두 가지 방법을 사용할 수 있습니다.
+- 조건식이 참인 동안 코드 블록을 실행합니다.(`while`)
+- 먼저 코드 블록을 실행한 다음 조건식을 확인합니다 (`do-while`)
+
+첫 번째 사용 사례(`while`):
+- while 루프의 조건식을 `()`괄호 안에서 계속되도록 선언합니다.
+- 완료하려는 작업을 `{}`중괄호 안에 추가합니다.
+> 다음 예제에서는 증가 연산자를 `++` 사용하여 `cakesEaten`변수의값을 증가 시킵니다.
+```kotlin
+var cakesEaten = 0
+while (cakesEaten < 3) {
+    println("Eat a cake")
+    cakesEaten++
+}
+// Eat a cake
+// Eat a cake
+// Eat a cake
+```
+
+두 번쨰 사용 사례(`do-while`):
+- while 루프의 조건식을 `()`괄호 안에서 계속되도록 선언합니다.
+- `{}`중괄호 안에 `do` 키워드를 사용하여 완료하려는 작ㅇ업을 정의합니다.
+```kotlin
+var cakesEaten = 0
+var cakesBaked = 0
+while (cakesEaten < 3) {
+    println("Eat a cake")
+    cakesEaten++
+}
+do {
+    println("Bake a cake")
+    cakesBaked++
+} while (cakesBaked < cakesEaten)
+// Eat a cake
+// Eat a cake
+// Eat a cake
+// Bake a cake
+// Bake a cake
+// Bake a cake
+```
