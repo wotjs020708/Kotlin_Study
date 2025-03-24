@@ -122,3 +122,45 @@ fun main() {
 그러나 다른 개발자가 코드를 빠르게 이해할 수 있도록 하려면 `=`할당 연산자를 사용할 때에도 반환 유형을 명시적으로 정의하는 것이 좋습니다.
 
 > `{}`중괄호를 사용하여 함수 본문을 선언하는 경우 반환 유형도 선언해야 합니다 (반환 `Unit`유형이 아닌 경우).
+
+
+## Early returns in functions
+
+함수의 코드가 특정 지점을 넘어 처리되는 것을 막으려면 `return` 키워드르 사용합니다. 이 예에서는 `if`조건 식이 참인 경우 함수에서 일찍 반환하는데 사용됩니다.
+
+```kotlin
+// A list of registered usernames
+val registeredUsernames = mutableListOf("john_doe", "jane_smith")
+
+// A list of registered emails
+val registeredEmails = mutableListOf("john@example.com", "jane@example.com")
+
+fun registerUser(username: String, email: String): String {
+    // Early return if the username is already taken
+    if (username in registeredUsernames) {
+        return "Username already taken. Please choose a different username."
+    }
+
+    // Early return if the email is already registered
+    if (email in registeredEmails) {
+        return "Email already registered. Please use a different email."
+    }
+
+    // Proceed with the registration if the username and email are not taken
+    registeredUsernames.add(username)
+    registeredEmails.add(email)
+
+    return "User registered successfully: $username"
+}
+
+fun main() {
+    println(registerUser("john_doe", "newjohn@example.com"))
+    // Username already taken. Please choose a different username.
+    println(registerUser("new_user", "newuser@example.com"))
+    // User registered successfully: new_user
+}
+```
+
+
+
+람다 표현식은 언뜻 보기에 이해하기 어령루 수 있으므로 분석해 보겠습니다. 람다 표현식은 중괄호 안에 작성됩니다.
