@@ -55,3 +55,28 @@ fun main() {
     // [Log] Hello
 }
 ```
+
+## Default parameter values
+
+함수 매개변수에 대한 기본값을 정희할 수 있습니다. 기본값이 있는 매개변수는 함수를 호출할 떄 생략할 수 있습니다. 기본값을 선언하려면 타입 뒤에 `=`할당 연산자를 사용합니다.
+```kotlin
+fun printMessageWithPrefix(message: String, prefix: String = "Info") {
+    println("[$prefix] $message")
+}
+
+fun main() {
+    // Function called with both parameters
+    printMessageWithPrefix("Hello", "Log") 
+    // [Log] Hello
+    
+    // Function called only with message parameter
+    printMessageWithPrefix("Hello")        
+    // [Info] Hello
+    
+    printMessageWithPrefix(prefix = "Log", message = "Hello")
+    // [Log] Hello
+}
+```
+
+
+
