@@ -78,5 +78,23 @@ fun main() {
 }
 ```
 
+## Functions without return
+
+함수가 유용한 값을 반환하지 않는 경우 반혼 유형은 `Unit`입니다. 단위는 값이하나만 있는 타입입니다. 함수 본문에서 `Unit`이 반환된다는 것을 명시적으로 선언할 필요는 없습니다. 즉, `return`반환 키워드를 사용하거나 반환 유형을 선언할 필요가 없습니다.
+
+```kotlin
+fun printMessage(message: String) {
+    println(message)
+    // `return Unit` or `return` is optional
+}
+
+fun main() {
+    printMessage("Hello")
+    // Hello
+}
+```
+
+
+
 
 
