@@ -286,3 +286,29 @@ fun main() {
 > ```Kotlin
 > val upperCaseString = { str -> str.uppercase() }
 > ```
+
+### Return from a function
+
+람다 표현식은 함수에서 반활될 수 있습니다. 컴파일러가 바환된 람다 표현식이 어떤 유형인지 이해할 수 있도록 함수 유형을 선언해야 합니다.
+
+다음 예제에서 `toSeconds()` 함수는 항상 `Int` 타입의 매개변수를 취하고 `Int` 값을 반환하는 람다식을 반환하므로 함수 타입이 `(Int) -> Int` 입니다.
+
+이 예제에서는 `when` 표현식을 사용하여 `toSeconds()`가 호출될 때 반환된는 람다 표현식을 결정합니다:
+```kotlin
+fun toSeconds(time: String): (Int) -> Int = when (time) {
+    "hour" -> { value -> value * 60 * 60 }
+    "minute" -> { value -> value * 60 }
+    "second" -> { value -> value }
+    else -> { value -> value }
+}
+
+fun main() {
+    val timesInMinutes = listOf(2, 10, 15, 1)
+    val min2sec = toSeconds("minute")
+    val totalTimeInSeconds = timesInMinutes.map(min2sec).sum()
+    println("Total time is $totalTimeInSeconds secs")
+    // Total time is 1680 secs
+}
+```
+
+
