@@ -161,6 +161,50 @@ fun main() {
 }
 ```
 
+## Lambda expressions
+
+Kotlin에서는 *람다 표현식(lambda expressions)*을 사용하여 함수의 코드를 더 간결하게 작성할 수 있습니다.
+예를 들어, 다음 `uppercaseString()`함수가 있습니다.
+```kotlin
+fun uppercaseString(text: String): String {
+    return text.uppercase()
+}
+fun main() {
+    println(uppercaseString("hello"))
+    // HELLO
+}
+```
+
+람다 표현식으로도 작성할 수 있습니다.
+```kotlin
+fun main() {
+    val upperCaseString = { text: String -> text.uppercase() }
+    println(upperCaseString("hello"))
+    // HELLO
+}
+```
+
+람다 표현식은 언뜻 보기에 이해하기 어려울 수 있으므로 분석해 보겠습니다. 람다 표현식은 중괄호 안에 작성됩니다.
+
+람다 표현식 내에는 다음과 같이 작성합니다.
+- 매개변수 뒤에 `->` 이 붙습니다.
+- 함수 본문은 `->` 뒤에 옵니다.
+
+이전 예에서:
+- `text` 함수 매개변수입니다.
+- `text` 타입이 `string` 입니다.
+- 이 함수는 `text`에서 호출된 `.uppercase()` 함수의 결과를 반환합니다.
+- 전체 람다 식은 대입 연산자 `=`를 사용하여 `upperCaseString`변수에 할당됩니다.
+- 람다 쵸현식은 함수처럼 `upperCaseString` 변수를 사용하고 문자열 "hello"를 매개변수로 사용하여 호출됩니다.
+- `println()` 함수는 결과를 인쇄합니다.
+> 매개변수 없이 람다를 선언한느 경우 `->`을 사용할 필요가 없습니다. 예를 들어
+> ```kotlin
+> { println("Log message") }
+> ```
+
+람다 표현식은 여러가지 방법으로 사용할 수 있습니다. 다음을 수행할 수 있습니다:
+- 람다 표현식을 다른 함수의 매개변수로 전달
+- 함수에서 람다 표현식을 반환
+- 자체적으로 람다 표현식 호출하기
 
 
-람다 표현식은 언뜻 보기에 이해하기 어령루 수 있으므로 분석해 보겠습니다. 람다 표현식은 중괄호 안에 작성됩니다.
