@@ -207,4 +207,56 @@ fun main() {
 - 함수에서 람다 표현식을 반환
 - 자체적으로 람다 표현식 호출하기
 
+### Pass to another function(다른 함수로 전달)
+
+람다 식을 함수에 전달하는 것이 유용한 경우의 좋은 예는 컬렉션에서 `.filter()` 함수를 사용하는 것입니다:
+```kotlin
+val numbers = listOf(1, -2, 3, -4, 5, -6)
+
+
+val positives = numbers.filter ({ x -> x > 0 })
+
+val isNegative = { x: Int -> x < 0 }
+val negatives = numbers.filter(isNegative)
+
+println(positives)
+// [1, 3, 5]
+println(negatives)
+// [-2, -4, -6]
+
+```
+`.filter()` 함수는 람다식을 술어로 받아 들입니다: 
+
+- `{ x -> x > 0 }`목록의 각 요소를 가져와서 양수인 요소만 반환합니다.
+- `{ x -> x < 0 }`목록의 각 요소를 가져와서 음수인 요소만 반환합니다.
+
+이 예제는 람다 표현식을 함수에 전달하는 두 가지 방법을 보여줍니다.
+- 양수의 경우 이 예제에서는 `.filter()` 함수에서 직접 람다 표현식을 추가합니다.
+- 음수의 경우 이 예제에서는 람다 식을 `isNegative` 변수에 할당합니다. 그런 다음 `.filter()` 함수에서 `isNegative` 변수가 함수 매개변수로 사용됩니다. 이경우 람다 표현식에 함수 매개변수 유형 (`x`)을 지정해야합니다.
+> 람다 식이 유리한 함수 매개변수인 경우 함수 괄호 `()`를 생략할 수 있습니다.
+> ``` kotlin
+> val positives = numbers.filter { x -> x > 0 }
+> ```
+> 이는 이 장의 마지막 부분에서 자세히 설명하는 후행 람다의 예입니다.
+
+또 다른 조흔 예는 `.map()` 함수를 사용하여 컬렉션의 항목을 변환하는 것입니다:
+
+```kotlin
+val numbers = listOf(1, -2, 3, -4, 5, -6)
+val doubled = numbers.map { x -> x * 2 }
+
+val isTripled = { x: Int -> x * 3 }
+val tripled = numbers.map(isTripled)
+
+println(doubled)
+// [2, -4, 6, -8, 10, -12]
+println(tripled)
+// [3, -6, 9, -12, 15, -18]
+
+```
+`.map()` 함수는 람다 표현식을 트랜스폼 함수로 받아들입니다.
+- `{ x -> x * 2 }`는 목록의 각 요소를 가져와 해당 요소에 2를 곲한 값을 반환합니다.
+- `{ x -> x * 3 }`는 목록의 각 요소를 가져와 해당 요소에 3을 곲한 값을 반환합니다.
+
+
 
