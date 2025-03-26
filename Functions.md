@@ -311,4 +311,29 @@ fun main() {
 }
 ```
 
+### Invoke separately
+
+람다 표현식은 중괄호 `{}` 뒤에 괄호 `()`를 추가하고 괄호 안에 매개변수를 포함하면 자체적으로 호출 할 수 있습니다.
+
+```kotlin
+println({ text: String -> text.uppercase() }("hello"))
+// HELLO
+```
+
+### Trailing lambdas
+
+이미 살펴보았듯이 람다 표현 식이 유일한 함수 매개변수인 경우 함수 괄호`()`를 삭제할 수 있습니다. 람다 표현식이 함수의 마지막 매개변수로 전달되는 경우에는 함수 괄호`()` 밖에 표현식을 작성할 수 있습니다. 두 경우 모두 이 구문을 후행 람다라고 합니다.
+
+예를 들어 `.fold()`함수는 초기 값과 연산자를 받습니다:
+```kotlin
+// The initial value is zero. 
+// The operation sums the initial value with every item in the list cumulatively.
+println(listOf(1, 2, 3).fold(0, { x, item -> x + item })) // 6
+
+// Alternatively, in the form of a trailing lambda
+println(listOf(1, 2, 3).fold(0) { x, item -> x + item })  // 6
+```
+
+람다 표현식에 대한 자세한 내용은 람다 표현식 및 익명 함수를 참조하세요.
+
 
