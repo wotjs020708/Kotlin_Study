@@ -8,5 +8,5 @@ https://kotlinlang.org/docs/kotlin-tour-welcome.html
 - [Collections](https://github.com/wotjs020708/Kotlin_study/blob/main/Collections.md)
 - [Control flow](https://github.com/wotjs020708/Kotlin_study/blob/main/ControlFlow.md)
 - [Functions](https://github.com/wotjs020708/Kotlin_study/blob/main/Functions.md)
-- Classes
+- [Classes](https://github.com/wotjs020708/Kotlin_Study/blob/main/Classes.md)
 - Null safety
