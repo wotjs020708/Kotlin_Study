@@ -40,3 +40,25 @@ class Contact(val id: Int, var email: String = "example@gmail.com") {
 }
 ```
 
+## Create instance
+
+클래스에서 객체를 만들려면 생성자를 사용하여 클래스 인스턴스를 선언합니다.
+
+기본적으로 Kotlin은 클래스 헤더에 선언된 매개변수를 사용하여 생성자를 자동으로 생성합니다.
+
+예를 들어: 
+```kotlin
+class Contact(val id: Int, var email: String)
+
+fun main() {
+    val contact = Contact(1, "mary@gmail.com")
+}
+```
+
+에를 들어:
+- `Contact` 클래스입니다.
+- `Contact`는 `Contact` 클래스의 인스턴스 입니다.
+- `id`와 `email`은 속성(properties)입니다.
+- `id`와 `email`은 기본 생성자와 함께 연락처를 생성하는 데 사용됩니다.
+
+Kotlin 클래스에는 사용자가 직접 정의한 생성자를 포함하여 많은 생성자가 있을 수 있습니다. 여러 생성자를 서언하는 방법에 대해 자세히 알아보려면 [생성자](https://kotlinlang.org/docs/classes.html#constructors)를 참조하세요.
