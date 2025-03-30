@@ -90,3 +90,23 @@ fun main() {
 > println("Their email address is: ${contact.email}")
 > ```
 
+## Member functions
+
+객체 특성의 일부로 프로퍼티를 선언하는 것 외에도 멤버 함수를 사용하여 객체의 동작을 정의할 수도 있습니다.
+
+Kotlin에서 멤버 함수는 클래스 본문 내에서 선언해야 합니다. 인스턴스에서 멤버 함수를 호출하려면 인스턴스 ㅇ치름 뒤에 마침표`.`가 붙은 함수 이름을 작성합니다. 예를 들어:
+```kotlin
+class Contact(val id: Int, var email: String) {
+    fun printId() {
+        println(id)
+    }
+}
+
+fun main() {
+    val contact = Contact(1, "mary@gmail.com")
+    // Calls member function printId()
+    contact.printId()           
+    // 1
+}
+```
+
