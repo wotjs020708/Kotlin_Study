@@ -110,3 +110,27 @@ fun main() {
 }
 ```
 
+## Data classes
+
+Kotlin에는 데이터를 저장하는 데 특히 유요한 데이터 클래스가 있습니다. 데이터 클래스는 클래스와 동일한 기능을 갖지만 추가 멤버 함수가 자동으로 제공됩니다. 이러한 멤버 함수를 사용하면 인스턴스를 읽기 가능한 출력으로 쉽게 인쇄하고, 클래스의 인스턴스를 비교하고, 인스턴스를 복사하는 등의 작업을 수행할 수 있습니다. 이러한 함수는 자동으로 사용할 수 있으므로 각 클래스에 대해 동일한 상용구 코드를 작성한는 데 시간을 들일 필요가 없습니다.
+
+데이터 클래스를 선언하려면 `data` 키워드를 사용합니다:
+
+```kotlin
+data class User(val name: String, val id: Int)
+```
+
+데이터 클래스의 가장 유용한 미리정의도니 멤버 함수는 다음과 같습니다:
+
+| Fucntion | Descriptions |
+| --- | --- | 
+| `toString()` | 클래스 인스턴스와 그 프로퍼티의 일기 가능한 문자열을 출력합니다.|
+| `equals()` or `==` | 클래스의 인스턴스를 비교합니다. |
+| `copy` | 다른 속성을 가진 클래스 인스턴스를 복사하여 클래스 인스턴스를 생성합니다. |
+
+각 기능의 사용 방법에 대한 예는 다음 섹션을 참조하세요:
+
+-  [Print as String](https://kotlinlang.org/docs/kotlin-tour-classes.html#print-as-string)
+- [Compare instances](https://kotlinlang.org/docs/kotlin-tour-classes.html#compare-instances)
+- [Copy instance](https://kotlinlang.org/docs/kotlin-tour-classes.html#copy-instance)
+
