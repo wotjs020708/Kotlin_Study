@@ -62,3 +62,31 @@ fun main() {
 - `id`와 `email`은 기본 생성자와 함께 연락처를 생성하는 데 사용됩니다.
 
 Kotlin 클래스에는 사용자가 직접 정의한 생성자를 포함하여 많은 생성자가 있을 수 있습니다. 여러 생성자를 서언하는 방법에 대해 자세히 알아보려면 [생성자](https://kotlinlang.org/docs/classes.html#constructors)를 참조하세요.
+
+## Access properties
+
+인스턴스의 속성에 액세스하려면 은스턴스 이름 뒤에 마침표`.`가 붙은 속성 이름을 작성합니다.
+
+```kotlin
+class Contact(val id: Int, var email: String)
+
+fun main() {
+    val contact = Contact(1, "mary@gmail.com")
+    
+    // Prints the value of the property: email
+    println(contact.email)           
+    // mary@gmail.com
+
+    // Updates the value of the property: email
+    contact.email = "jane@gmail.com"
+    
+    // Prints the new value of the property: email
+    println(contact.email)           
+    // jane@gmail.com
+}
+```
+> 속성 값을 문자열의 일부로 연결하려면 문자열 템프릿(`$`)을 사용할 수 있ㅇ릇브니다. 예를 들어:
+> ```Kotlin
+> println("Their email address is: ${contact.email}")
+> ```
+
