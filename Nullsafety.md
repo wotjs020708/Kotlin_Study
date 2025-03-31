@@ -46,3 +46,21 @@ fun main() {
 ```
 > `length`는 문자열 내의 문자 수를 포함하는 문자열 클래스의 속성입니다.
 
+## Check for null values
+
+조건식 내에는 `null`값의 존재 여부를 확인할 수 있습니다. 다음 예제에는 `describeString()` 함수에는 `mybeString`이 `null`이 아닌지, 그 길이가 0보다 큰지 확인하는 if문이 있습니다:
+```kotlin
+fun describeString(maybeString: String?): String {
+    if (maybeString != null && maybeString.length > 0) {
+        return "String of length ${maybeString.length}"
+    } else {
+        return "Empty or null string"
+    }
+}
+
+fun main() {
+    val nullString: String? = null
+    println(describeString(nullString))
+    // Empty or null string
+}
+```
