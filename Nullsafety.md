@@ -79,3 +79,20 @@ fun main() {
     // null
 }
 ```
+> 안전 호출을 연결하여 객체의 프로퍼티에 `null`값이 포함된 경우 오류가 발생하지 않고 `null`이 반환되도록 할 수 있습니다. 예를 들어:
+>```kotlin
+>person.company?.address?.country
+>```
+
+안전호출 연산자는 확장 또는 멤버 함수를 안전하게 호출하는 데에도 사용할 수 있습니다. 이 경우 함수가 호출되기 전에 `null` 검사가 수행됩니다. 검사에서 `null` 값이 감지되면 호출이 건너뛰고 `null`이 반환됩니다.
+
+다음 예제에서는 `nullString`이 `null`이므로 `.uppercase()`호출을 건너뛰고 `null`을 반환합니다.
+
+```kotlin
+fun main() {
+    val nullString: String? = null
+    println(nullString?.uppercase())
+    // null
+}
+```
+
