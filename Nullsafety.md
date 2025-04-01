@@ -96,3 +96,18 @@ fun main() {
 }
 ```
 
+## Use Elvis operator
+
+Elvis operator`?:`를 사용하여 `null`값이 감지될 경우 안환할 기본값을 제공할 수 있습니다.
+
+Elvis operator의 왼쪽에 `null` 값에 대해 검사해야 할 항목을 적습니다. `null`값이 감지되면 반환해야하는 값은 Elvis operator의 오른쪽에 적습니다.
+
+다음 예제에서는 `nullString`이 `null`이므로 `lenght` 속성에 액세스하기 위한 안전 호출이 `null` 값을 반환합니다. 결과적으로 elvis operator는 0을 반환합니다:
+
+```kotlin
+fun main() {
+    val nullString: String? = null
+    println(nullString?.length ?: 0)
+    // 0
+}
+```
