@@ -9,4 +9,4 @@ https://kotlinlang.org/docs/kotlin-tour-welcome.html
 - [Control flow](https://github.com/wotjs020708/Kotlin_study/blob/main/ControlFlow.md)
 - [Functions](https://github.com/wotjs020708/Kotlin_study/blob/main/Functions.md)
 - [Classes](https://github.com/wotjs020708/Kotlin_Study/blob/main/Classes.md)
-- Null safety
+- [Null safety](https://github.com/wotjs020708/Kotlin_Study/blob/main/Nullsafety.md)
