@@ -64,3 +64,18 @@ fun main() {
     // Empty or null string
 }
 ```
+
+## Use safe calls
+
+`null` 값을 포함할 수 있는 객체의 프로퍼티에 안전하게 액세스하려면 안전 호출연산자`?`를 사용합니다. 안전호출 연산자는 객체 또는 액세스한 속성 중 하나가 `null`인 경우 `null`을 반환합니다. 이 연산자는 코드에서 오류를 유발하는 `null` 값의 존재를 방지하려는 경우에 유용합니다.
+
+다음 예제에서 `lengthString()` 함수는 안전 호출을 사용하여 문자열의 길이 또는 `null`을 반환합니다:
+```kotlin
+fun lengthString(maybeString: String?): Int? = maybeString?.length
+
+fun main() { 
+    val nullString: String? = null
+    println(lengthString(nullString))
+    // null
+}
+```
