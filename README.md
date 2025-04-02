@@ -10,3 +10,18 @@ https://kotlinlang.org/docs/kotlin-tour-welcome.html
 - [Functions](https://github.com/wotjs020708/Kotlin_study/blob/main/Functions.md)
 - [Classes](https://github.com/wotjs020708/Kotlin_Study/blob/main/Classes.md)
 - [Null safety](https://github.com/wotjs020708/Kotlin_Study/blob/main/Nullsafety.md)
+
+-----
+
+# KMP(Kotlin Multiplatform app)
+
+https://www.jetbrains.com/help/kotlin-multiplatform-dev/multiplatform-create-first-app.html
+> kotlin Multiplatform Development 문서 내용입니다.
+
+## Create your kotlin Multiplatform app
+
+- Createyour kotlin Multiplatform app
+- Update the user interface
+- Add dependencies
+- Share more logic
+- Wrap up your project
